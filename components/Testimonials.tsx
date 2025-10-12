@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import Image from "next/image";
 import { testimonials } from "@/lib/utils/constants";
+import { testimonialTypes } from "@/lib/utils/types";
 
 const Testimonials = () => {
   const testimonialDivRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -55,8 +56,8 @@ const Testimonials = () => {
   // to animate the progress
   useEffect(() => {
     let currentProgress = 0;
-    let startTime = performance.now();
-    let span = testimonialSpanRef.current;
+    const startTime = performance.now();
+    const span = testimonialSpanRef.current;
 
     if (span[sliderId]) {
       // animation to move the indicator
@@ -196,14 +197,14 @@ const Testimonials = () => {
         Testimonials
       </h2>
       <ul className="relative flex items-center justify-between gap-4 overflow-x-hidden mt-12 w-full">
-        {testimonials.map((item) => (
+        {testimonials.map((item: testimonialTypes) => (
           <li
             id="slider"
             key={item.id}
             className="w-[70vw] h-[35vh] p-4 mx-2 shrink-0 rounded-xl overflow-hidden flex flex-col items-center justify-between relative glassmorphism md:w-[70vw] lg:w-[30vw]"
           >
             <blockquote className="font-signika text-sm">
-              "{item.testimonial}"
+              &quot;{item.testimonial}&quot;
             </blockquote>
             <div className="w-full flex items-center justify-between">
               <span className="font-inter">
@@ -223,18 +224,22 @@ const Testimonials = () => {
       </ul>
       <div className="relative w-48 flex items-center justify-center rounded-full my-8 mx-auto">
         {testimonials.map((_, i) => (
-          <span
+          <div
             key={i}
-            ref={(el: any) => (testimonialDivRef.current[i] = el)}
+            ref={(el: HTMLDivElement | null): void => {
+              testimonialDivRef.current[i] = el;
+            }}
             onClick={() => handleDotClick(i)}
             className="w-3 h-3 relative bg-blue-400 mx-2 rounded-full cursor-pointer lg:w-3 lg:h-3 dot"
           >
             <span
               // to keep track of the playing progress
-              ref={(el: any) => (testimonialSpanRef.current[i] = el)}
+              ref={(el: HTMLSpanElement | null): void => {
+                testimonialSpanRef.current[i] = el;
+              }}
               className="w-full h-full rounded-full absolute"
             />
-          </span>
+          </div>
         ))}
       </div>
       <Link

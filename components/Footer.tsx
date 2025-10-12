@@ -1,4 +1,5 @@
 import { legal, quickLinks } from "@/lib/utils/constants";
+import { legalTypes, linkTypes } from "@/lib/utils/types";
 import Link from "next/link";
 
 const Footer = () => {
@@ -18,8 +19,9 @@ const Footer = () => {
         <div>
           <ul className="flex flex-col items-center gap-2">
             <li className="font-semibold">Quick Links</li>
-            {quickLinks.map((link: any, i: number) => (
+            {quickLinks.map((link: linkTypes, i: number) => (
               <Link
+                key={i}
                 href={`${link.link}`}
                 className="text-sm duration-500 hover:text-white/60"
               >
@@ -31,8 +33,9 @@ const Footer = () => {
         <div>
           <ul className="flex flex-col items-center gap-2">
             <li className="font-semibold">Legal</li>
-            {legal.map((link: any, i: number) => (
+            {legal.map((link: legalTypes, i: number) => (
               <Link
+                key={i}
                 href={`${link.link}`}
                 className="text-sm duration-500 hover:text-white/60"
               >

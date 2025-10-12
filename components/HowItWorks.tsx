@@ -59,7 +59,7 @@ const HowItWorks = () => {
           >
             <h6 className="font-lg font-semibold">Create Your Profile</h6>
             <p className="font-normal text-xs">
-              Share your dog's personality & needs.
+              Share your dog&apos;s personality & needs.
             </p>
             <h4 className="absolute -top-5 -left-3 rounded-full p-4 text-center flex items-center justify-center border-4 border-blue-300 shadow-md font-signika bg-blue-500 w-10 h-10">
               1

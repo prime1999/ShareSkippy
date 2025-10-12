@@ -21,12 +21,13 @@ const WhySkippy = () => {
           Why ShareSkippy
         </h3>
         <p className="font-signika w-10/12">
-          Did you know over 70% of city dogs don't get enough exercise? <br />
+          Did you know over 70% of city dogs don&apos;t get enough exercise?{" "}
+          <br />
           Life happens — owners get busy, work long hours, face health issues,
           or juggle tight budgets. But every pup still deserves to run, play,
           and explore. <br />
-          That's where you come in: volunteer, make a dog's day (and a
-          human's!), and get the best reward ever: puppy love. ❤️
+          That&apos;s where you come in: volunteer, make a dog&apos;s day (and a
+          human&apos;s!), and get the best reward ever: puppy love. ❤️
         </p>
         <Link
           href="/signIn"

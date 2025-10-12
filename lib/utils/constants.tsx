@@ -1,7 +1,8 @@
 import dog4 from "../../public/assets/images/dog4.png";
 import dog5 from "../../public/assets/images/dog5.png";
+import { testimonialTypes } from "./types";
 
-export const testimonials = [
+export const testimonials: testimonialTypes[] = [
   {
     id: 1,
     name: "Sarah",

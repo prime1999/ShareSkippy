@@ -46,7 +46,7 @@ const Hero = () => {
           className="mt-2 text-blue-800 font-normal text-lg max-lg:text-center max-lg:mt-8 lg:mt-0"
           id="heading"
         >
-          Find Your Dog's New Best Friend
+          Find Your Dog&apos;s New Best Friend
         </h6>
         <h1
           className="mb-2 text-5xl font-semibold text-blue-900 my-2 max-lg:text-center max-lg:mb-4 lg:mb-0"
