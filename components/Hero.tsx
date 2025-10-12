@@ -72,7 +72,7 @@ const Hero = () => {
           >
             <div className="absolute top-0 left-[-100%] w-full h-full bg-orange-500 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
 
-            <span className="relative z-10 font-semibold text-md">
+            <span className="relative z-10 font-semibold text-sm md:text-md">
               Share Your Dog & Borrow a Friend
             </span>
           </Link>
