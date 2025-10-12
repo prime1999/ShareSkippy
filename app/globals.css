@@ -8,14 +8,16 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-kanit: var(--font-kanit);
+  --font-inter: var(--font-inter);
+  --font-roboto: var(--font-roboto);
+  --font-signika: var(--font-signika);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #0a0a0a;
   }
 }
 
@@ -23,4 +25,11 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.glassmorphism {
+  background: rgba(255, 254, 254, 0.5);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(211, 210, 210, 0.441);
 }

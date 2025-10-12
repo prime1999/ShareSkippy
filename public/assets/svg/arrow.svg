@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="24" viewBox="0 0 120 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Right arrow">
+  <title>Right Arrow</title>
+  <line x1="2" y1="12" x2="110" y2="12" stroke="#4a80f5ff" stroke-width="4" stroke-linecap="dash"/>
+  <polyline points="100,4 112,12 100,20" fill="none" stroke="#4a80f5ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
