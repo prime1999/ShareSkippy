@@ -11,7 +11,7 @@ import { testimonialTypes } from "@/lib/utils/types";
 const Testimonials = () => {
   const testimonialDivRef = useRef<(HTMLDivElement | null)[]>([]);
   const testimonialSpanRef = useRef<(HTMLSpanElement | null)[]>([]);
-  const animRef = useRef<any>(null);
+  const animRef = useRef<gsap.core.Tween | null>(null);
 
   // state for the slider playing progress (to keep track of the whole slider animation)
   const [sliderAnimation, setSliderAnimation] = useState({
@@ -23,6 +23,9 @@ const Testimonials = () => {
     stopPlay: false,
   });
   const { isPlaying, startPlay, sliderId, isEnd, stopPlay } = sliderAnimation;
+
+  // type
+  type ProcessType = "slide-end" | "slide-last" | "slide-reset" | "slide-play";
 
   useGSAP(() => {
     // slider animation to move the slide out of the screen and bring the next slide in
@@ -55,7 +58,7 @@ const Testimonials = () => {
   }, [isEnd, sliderId]);
   // to animate the progress
   useEffect(() => {
-    let currentProgress = 0;
+    let currentProgress: number = 0;
     const startTime = performance.now();
     const span = testimonialSpanRef.current;
 
@@ -64,7 +67,11 @@ const Testimonials = () => {
       animRef.current = gsap.to(span[sliderId], {
         onUpdate: () => {
           // get the progress of the video
-          const progress = Math.ceil(animRef.current.progress() * 100);
+          let progress: number = 0;
+
+          if (animRef.current) {
+            progress = Math.ceil(animRef.current.progress() * 100);
+          }
 
           if (progress != currentProgress) {
             currentProgress = progress;
@@ -127,7 +134,7 @@ const Testimonials = () => {
 
   // for when the play|pause|rest button is clicked, we check the argument and handle the slider animation
   // using the current state of the slider
-  const handleProcess = (type: any, i: number) => {
+  const handleProcess = (type: ProcessType, i: number) => {
     switch (type) {
       case "slide-end":
         setSliderAnimation((prev) => ({

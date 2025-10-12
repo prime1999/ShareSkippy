@@ -1,17 +1,17 @@
 import { StaticImageData } from "next/image";
 
 export interface linkTypes {
-  name: String;
-  link: String;
+  name: string;
+  link: string;
 }
 export interface legalTypes {
-  name: String;
-  link: String;
+  name: string;
+  link: string;
 }
 export interface testimonialTypes {
   id: number;
-  name: String;
-  text: String;
-  testimonial: String;
+  name: string;
+  text: string;
+  testimonial: string;
   dog: StaticImageData;
 }
