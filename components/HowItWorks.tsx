@@ -20,7 +20,7 @@ const HowItWorks = () => {
       stagger: 0.5,
       scrollTrigger: {
         trigger: "#steps",
-        start: "top 80%",
+        start: "top 90%",
         end: "bottom 20%",
         toggleActions: "play none none reverse",
         markers: false,
