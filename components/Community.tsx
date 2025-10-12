@@ -3,7 +3,7 @@ import Link from "next/link";
 const Community = () => {
   return (
     <section className="font-inter w-10/12 mx-auto rounded-4xl px-3 py-8 glassmorphism flex flex-col items-center justify-center my-32 md:p-8">
-      <h1 className="text-xl w-8/12 mx-auto text-center font-semibold mb-2 lg:text-3xl">
+      <h1 className="text-xl w-11/12 mx-auto text-center font-semibold mb-2 lg:text-3xl">
         Join the dog-sharing community that puts love before money.
       </h1>
       <p className="text-sm max-sm:text-center">
