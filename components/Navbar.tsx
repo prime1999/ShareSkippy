@@ -7,6 +7,17 @@ const Navbar = () => {
       <div className="w-11/12 flex items-center justify-between mx-auto rounded-3xl mt-8 p-4 glassmorphism md:w-9/12">
         {" "}
         <Logo />
+        <ul className="hidden items-center justify-between gap-4 font-roboto text-sm font-semibold md:flex">
+          <li className="duration-500 hover:text-black/50">
+            <Link href="#howItWorks">How It Works</Link>
+          </li>
+          <li className="duration-500 hover:text-black/50">
+            <Link href="#whySkippy">Why Skippy</Link>
+          </li>
+          <li className="duration-500 hover:text-black/50">
+            <Link href="#testimonials">Testimonials</Link>
+          </li>
+        </ul>
         <Link
           href="/signIn"
           className="relative inline-block overflow-hidden rounded-xl bg-blue-600 text-white font-roboto px-6 py-2 group"

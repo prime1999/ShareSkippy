@@ -4,7 +4,10 @@ import womanWithDog from "../public/assets/images/womanWithDog.png";
 
 const WhySkippy = () => {
   return (
-    <section className="flex items-center justify-between w-11/12 mx-auto my-32 font-signika">
+    <section
+      className="flex items-center justify-between w-11/12 mx-auto my-32 font-signika"
+      id="whySkippy"
+    >
       <div className="relative">
         <div className="hidden bg-green-600 rounded-full w-100 h-100 overflow-hidden md:block">
           <Image

@@ -199,7 +199,10 @@ const Testimonials = () => {
     }));
   };
   return (
-    <section className="flex flex-col items-center justify-center my-16">
+    <section
+      className="flex flex-col items-center justify-center my-16"
+      id="testimonials"
+    >
       <h2 className="font-signika text-center text-4xl font-semibold">
         Testimonials
       </h2>

@@ -28,7 +28,7 @@ const HowItWorks = () => {
     });
   }, []);
   return (
-    <section className="w-11/12 mx-auto my-16 font-roboto">
+    <section className="w-11/12 mx-auto mt-4 mb-16 font-roboto" id="howItWorks">
       <div className="relative w-full flex items-center justify-center">
         <Image
           src={sign}
