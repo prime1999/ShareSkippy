@@ -254,7 +254,7 @@ const Testimonials = () => {
       </div>
       <Link
         href="/signIn"
-        className="relative inline-block overflow-hidden rounded-xl bg-blue-600 text-white font-roboto px-6 py-2 group"
+        className="relative inline-block overflow-hidden rounded-xl bg-blue-600 shadow-md text-white font-roboto px-6 py-2 group"
       >
         <div className="absolute top-0 left-[-100%] w-full h-full bg-blue-700 transition-all duration-300 ease-out group-hover:left-0 z-0"></div>
 

@@ -17,7 +17,7 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <ul className="flex flex-col items-center gap-2">
+          <ul className="flex flex-col items-center gap-2 lg:items-start">
             <li className="font-semibold">Quick Links</li>
             {quickLinks.map((link: linkTypes, i: number) => (
               <Link
@@ -31,7 +31,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <ul className="flex flex-col items-center gap-2">
+          <ul className="flex flex-col items-center gap-2 lg:items-start">
             <li className="font-semibold">Legal</li>
             {legal.map((link: legalTypes, i: number) => (
               <Link

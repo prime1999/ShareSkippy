@@ -11,9 +11,9 @@ const Community = () => {
       </p>
       <Link
         href="/signIn"
-        className="relative inline-block overflow-hidden rounded-full bg-orange-400 text-white font-roboto mt-8 px-8 py-4 group"
+        className="relative inline-block overflow-hidden rounded-full bg-blue-500 shadow-lg text-white font-roboto mt-8 px-8 py-4 group"
       >
-        <div className="absolute top-0 left-[-100%] w-full h-full bg-orange-500 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
+        <div className="absolute top-0 left-[-100%] w-full h-full bg-blue-600 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
 
         <span className="relative z-10 font-semibold text-md">
           Join the Community
