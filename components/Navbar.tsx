@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="w-11/12 flex items-center justify-between mx-auto rounded-3xl mt-8 p-4 glassmorphism md:w-9/12">
         {" "}
         <Logo />
-        <ul className="hidden items-center justify-between gap-4 font-roboto text-sm font-semibold md:flex">
+        <ul className="hidden items-center justify-between gap-4 font-roboto text-sm font-semibold lg:flex">
           <li className="duration-500 hover:text-black/60">
             <Link href="#howItWorks">How It Works</Link>
           </li>

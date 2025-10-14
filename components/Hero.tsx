@@ -40,7 +40,7 @@ const Hero = () => {
 
   return (
     <main
-      className="relative px-4 pt-32 pb-16 flex items-center justify-between gap-4 w-full h-[700px] mx-auto mb-8 font-signika md:px-16 md:py-32"
+      className="bg-fixed bg-center relative px-4 pt-32 pb-16 flex items-center justify-between gap-4 w-full h-[700px] mx-auto mb-8 font-signika md:px-16 md:py-32"
       style={{ backgroundImage: `url(${woman.src})`, backgroundSize: "cover" }}
     >
       <div
@@ -87,7 +87,7 @@ const Hero = () => {
           </Link>
         </div>
 
-        <div className="absolute -bottom-20 right-5 border-4 border-white rounded-full shadow-lg">
+        <div className="absolute -bottom-20 right-5 border-4 border-white rounded-full shadow-lg max-md:hidden">
           <Image
             src={dog1}
             alt="dog1"
@@ -107,7 +107,7 @@ const Hero = () => {
             className="rounded-full z-100 w-15 h-15 object-cover"
           />
         </div>
-        <div className="absolute bottom-10 left-30 border-4 border-white rounded-full shadow-lg">
+        <div className="absolute bottom-5 left-0 border-4 border-white rounded-full shadow-lg md:left-20 lg:left-30">
           <Image
             src={dog3}
             alt="dog1"
