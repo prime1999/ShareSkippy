@@ -39,3 +39,10 @@ body {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(211, 210, 210, 0.441);
 }
+
+/* .circle-crop {
+  clip-path: circle(50% at 40.4% 50%);
+} */
+.circle-crop {
+  border-radius: 0, 0, 100%, 100%;
+}

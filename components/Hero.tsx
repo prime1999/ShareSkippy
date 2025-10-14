@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import Image from "next/image";
-import woman from "../public/assets/images/woman.png";
+import woman from "../public/assets/images/woman3.jpg";
 import dog1 from "../public/assets/images/dog1.jpg";
 import dog2 from "../public/assets/images/dog2.jpg";
 import dog3 from "../public/assets/images/dog3.jpg";
@@ -78,28 +78,17 @@ const Hero = () => {
         </div>
       </div>
       <div className="hidden lg:block lg:w-1/2">
-        <div className="relative">
-          {/* <div className="w-130 h-130 rounded-full border-2 border-dashed border-blue-200 flex items-center justify-center p-4">
-            <Image
-              src={backdrop}
-              alt="A blurred backdrop"
-              width={500}
-              height={500}
-              placeholder="blur"
-              className="w-120 h-120"
-              style={{ borderRadius: "100%" }}
-            />
-          </div> */}
-          <div className="">
+        <div className="relative ml-12">
+          <div className="p-2 border-2 border-dashed border-blue-300 rounded-full flex items-center justify-center">
             <Image
               src={woman}
               alt="woman hugging a dog"
               width={500}
               height={500}
-              className=""
+              className="w-120 h-120 rounded-full"
             />
           </div>
-          <div className="absolute bottom-20 right-20 border-4 border-white rounded-full shadow-lg">
+          <div className="absolute bottom-20 right-5 border-4 border-white rounded-full shadow-lg">
             <Image
               src={dog1}
               alt="dog1"
@@ -126,7 +115,6 @@ const Hero = () => {
               className="rounded-full z-100 w-15 h-15 object-cover"
             />
           </div>
-          {/* <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-white via-transparent to-transparent"></div> */}
         </div>
       </div>
     </main>
