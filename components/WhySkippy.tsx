@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import womanWithDog from "../public/assets/images/womanWithDog.png";
 import womanPlayingWithDog from "../public/assets/images/womanPlayingWithDog.jpg";
 
 const WhySkippy = () => {

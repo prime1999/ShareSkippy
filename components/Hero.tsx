@@ -4,7 +4,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import Image from "next/image";
-import woman from "../public/assets/images/woman4.jpg";
+import woman from "../public/assets/images/woman.png";
+import backdrop from "../public/assets/images/blurBackdrop.png";
 import dog1 from "../public/assets/images/dog1.jpg";
 import dog2 from "../public/assets/images/dog2.jpg";
 import dog3 from "../public/assets/images/dog3.jpg";
@@ -39,23 +40,16 @@ const Hero = () => {
   }, []);
 
   return (
-    <main
-      className="bg-fixed bg-center relative px-4 pt-32 pb-16 flex items-center justify-between gap-4 w-full h-[700px] mx-auto mb-8 font-signika md:px-16 md:py-32"
-      style={{ backgroundImage: `url(${woman.src})`, backgroundSize: "cover" }}
-    >
-      <div
-        className="absolute top-0 left-0 w-full h-full"
-        style={{ backgroundColor: "rgba(0,0,0,0.3)" }}
-      ></div>
-      <div className="w-full text-center flex flex-col justify-center items-center relative">
+    <main className="relative px-4 pt-32 pb-16 flex items-center justify-between gap-4 w-11/12 mx-auto font-signika md:px-16 md:py-32">
+      <div className="w-full lg:w-1/2">
         <h6
-          className="mt-2 text-white/90 font-normal text-lg max-lg:text-center max-lg:mt-8 lg:mt-0"
+          className="mt-2 text-blue-800 font-normal text-lg max-lg:text-center max-lg:mt-8 lg:mt-0"
           id="heading"
         >
-          Where Dog Owners and Dog Lovers Connect
+          Find Your Dog&apos;s New Best Friend
         </h6>
         <h1
-          className="mb-2 text-5xl font-semibold text-white my-2 max-lg:text-center max-lg:mb-4 lg:mb-0"
+          className="mb-2 text-5xl font-semibold text-blue-900 my-2 max-lg:text-center max-lg:mb-4 lg:mb-0"
           id="main-heading"
         >
           Connect with Local Dog Lovers.
@@ -66,10 +60,7 @@ const Hero = () => {
         >
           Build a Happier Neighborhood Together
         </h2>
-        <p
-          className="text-sm w-11/12 text-white font-roboto max-lg:text-center"
-          id="para"
-        >
+        <p className="text-sm w-11/12 font-roboto max-lg:text-center" id="para">
           ShareSkippy connects dog owners with verified dog lovers in your
           neighborhood for free walks, playdates, and adventures.
         </p>
@@ -86,36 +77,56 @@ const Hero = () => {
             </span>
           </Link>
         </div>
-
-        <div className="absolute -bottom-20 right-5 border-4 border-white rounded-full shadow-lg max-md:hidden">
-          <Image
-            src={dog1}
-            alt="dog1"
-            width={200}
-            height={200}
-            placeholder="blur"
-            className="rounded-full z-100 w-20 h-20 object-cover"
-          />
-        </div>
-        <div className="absolute -top-10 right-30 border-4 border-white rounded-full shadow-lg">
-          <Image
-            src={dog2}
-            alt="dog1"
-            width={500}
-            height={500}
-            placeholder="blur"
-            className="rounded-full z-100 w-15 h-15 object-cover"
-          />
-        </div>
-        <div className="absolute bottom-5 left-0 border-4 border-white rounded-full shadow-lg md:left-20 lg:left-30">
-          <Image
-            src={dog3}
-            alt="dog1"
-            width={400}
-            height={400}
-            placeholder="blur"
-            className="rounded-full z-100 w-15 h-15 object-cover"
-          />
+      </div>
+      <div className="hidden lg:block lg:w-1/2">
+        <div className="relative">
+          <div className="w-130 h-130 rounded-full border-2 border-dashed border-blue-200 flex items-center justify-center p-4">
+            <Image
+              src={backdrop}
+              alt="A blurred backdrop"
+              width={500}
+              height={500}
+              placeholder="blur"
+              className="w-120 h-120"
+              style={{ borderRadius: "100%" }}
+            />
+          </div>
+          <div className="absolute -top-20">
+            <Image
+              src={woman}
+              alt="woman hugging a dog"
+              width={500}
+              height={500}
+              className=""
+            />
+          </div>
+          <div className="absolute bottom-20 right-20 border-4 border-white rounded-full shadow-lg">
+            <Image
+              src={dog1}
+              alt="dog1"
+              width={200}
+              height={200}
+              className="rounded-full z-100 w-15 h-15 object-cover"
+            />
+          </div>
+          <div className="absolute top-0 right-30 border-4 border-white rounded-full shadow-lg">
+            <Image
+              src={dog2}
+              alt="dog1"
+              width={500}
+              height={500}
+              className="rounded-full z-100 w-15 h-15 object-cover"
+            />
+          </div>
+          <div className="absolute top-10 left-10 border-4 border-white rounded-full shadow-lg">
+            <Image
+              src={dog3}
+              alt="dog1"
+              width={500}
+              height={500}
+              className="rounded-full z-100 w-15 h-15 object-cover"
+            />
+          </div>
         </div>
       </div>
     </main>
