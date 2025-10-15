@@ -28,7 +28,7 @@ const HowItWorks = () => {
     });
   }, []);
   return (
-    <section className="w-11/12 mx-auto mt-4 mb-16 font-roboto" id="howItWorks">
+    <section className="w-11/12 mx-auto font-roboto pt-16" id="howItWorks">
       <div className="relative w-full flex items-center justify-center">
         <Image
           src={sign}
@@ -95,7 +95,8 @@ const HowItWorks = () => {
         {" "}
         <Link
           href="/signIn"
-          className="relative inline-block overflow-hidden rounded-full bg-blue-500 text-white shadow-lg font-roboto mt-8 px-8 py-4 group"
+          className="relative inline-block overflow-hidden rounded-full bg-blue-500 text-white font-roboto mt-8 px-8 py-4 shadow-lg group"
+          revert-update
         >
           <div className="absolute top-0 left-[-100%] w-full h-full bg-blue-600 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
 

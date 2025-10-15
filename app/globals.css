@@ -21,10 +21,8 @@
   }
 }
 
-@layer base {
-  * {
-    scroll-behavior: smooth;
-  }
+* {
+  scroll-behavior: smooth;
 }
 
 body {
