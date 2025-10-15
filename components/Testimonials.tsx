@@ -9,8 +9,6 @@ import { testimonials } from "@/lib/utils/constants";
 import { testimonialTypes } from "@/lib/utils/types";
 
 const Testimonials = () => {
-  const [testimonialsBtns, setTestimonialsBtns] =
-    useState<testimonialTypes[]>(testimonials);
   const testimonialDivRef = useRef<(HTMLDivElement | null)[]>([]);
   const testimonialSpanRef = useRef<(HTMLSpanElement | null)[]>([]);
   const animRef = useRef<gsap.core.Tween | null>(null);
@@ -28,11 +26,6 @@ const Testimonials = () => {
 
   // type
   type ProcessType = "slide-end" | "slide-last" | "slide-reset" | "slide-play";
-
-  useEffect(() => {
-    const updatedTestimonials = testimonials.slice(0, -2);
-    setTestimonialsBtns(updatedTestimonials);
-  }, []);
 
   useGSAP(() => {
     // slider animation to move the slide out of the screen and bring the next slide in
@@ -109,7 +102,7 @@ const Testimonials = () => {
             gsap.to(span[sliderId], {
               backgroundColor: "#0517df",
             });
-            if (sliderId !== 3) {
+            if (sliderId !== 5) {
               handleProcess("slide-end", sliderId);
             } else {
               handleProcess("slide-reset", 0);
@@ -237,10 +230,9 @@ const Testimonials = () => {
             </div>
           </li>
         ))}
-        {/* <span className="hidden absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white via-transparent to-white lg:block"></span> */}
       </ul>
       <div className="relative w-48 flex items-center justify-center rounded-full my-8 mx-auto">
-        {testimonialsBtns.map((_, i) => (
+        {testimonials.map((_, i) => (
           <div
             key={i}
             ref={(el: HTMLDivElement | null): void => {

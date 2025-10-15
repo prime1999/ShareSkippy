@@ -34,10 +34,10 @@ const HeroSlider = () => {
     gsap.to("#slides", {
       transform:
         window.innerWidth < 760
-          ? `translateX(${-105 * sliderId}%)` // mobile
+          ? `translateX(${-104 * sliderId}%)` // mobile
           : window.innerWidth < 1200
-          ? `translateX(${-102 * sliderId}%)` // tablet
-          : `translateX(${-103 * sliderId}%)`, // laptop
+          ? `translateX(${-100 * sliderId}%)` // tablet
+          : `translateX(${-101 * sliderId}%)`, // laptop
       duration: 2,
       ease: "power2.inOut",
     });
@@ -198,7 +198,7 @@ const HeroSlider = () => {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center -mt-32">
+    <main className="flex flex-col items-center justify-center -mt-16 lg:-mt-32">
       <ul className="relative flex items-center justify-between gap-4 overflow-x-hidden mt-12 mx-auto w-full font-signika">
         {slider.map((slide: string, i: number) => (
           <li

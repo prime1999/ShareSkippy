@@ -2,11 +2,12 @@ import Image from "next/image";
 import logIn from "../public/assets/icons/login.png";
 import Link from "next/link";
 import Logo from "./Logo";
+import MobileDrawer from "./MobileDrawer";
 
 const Navbar = () => {
   return (
     <nav className="fixed z-100 w-full">
-      <div className="w-11/12 flex items-center justify-between mx-auto rounded-3xl mt-4 mb-12 p-4 glassmorphism md:w-9/12">
+      <div className="w-11/12 flex items-center justify-between mx-auto rounded-3xl mt-4 mb-12 p-4 glassmorphism lg:w-9/12">
         <Logo />
         <ul className="hidden items-center justify-between gap-4 font-roboto text-sm font-semibold lg:flex">
           <li className="duration-500 hover:text-black/60">
@@ -20,8 +21,7 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <div className="flex items-center gap-4 lg:gap-6">
-          {" "}
+        <div className="hidden items-center gap-4 lg:gap-6 lg:flex">
           <span className="flex items-center gap-1 cursor-pointer duration-500 hover:gap-2">
             <h6 className="font-signika text-md font-semibold">Sign In</h6>
             <Image src={logIn} alt="login icon" width={20} height={20} />
@@ -37,6 +37,7 @@ const Navbar = () => {
             </span>
           </Link>
         </div>
+        <MobileDrawer />
       </div>
     </nav>
   );
