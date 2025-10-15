@@ -1,18 +1,13 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import Link from "next/link";
-import Image from "next/image";
-import { testimonials } from "@/lib/utils/constants";
-import { testimonialTypes } from "@/lib/utils/types";
+import { slider } from "@/lib/utils/constants";
 
-const Testimonials = () => {
-  const [testimonialsBtns, setTestimonialsBtns] =
-    useState<testimonialTypes[]>(testimonials);
-  const testimonialDivRef = useRef<(HTMLDivElement | null)[]>([]);
-  const testimonialSpanRef = useRef<(HTMLSpanElement | null)[]>([]);
+const HeroSlider = () => {
+  const sliderDivRef = useRef<(HTMLDivElement | null)[]>([]);
+  const sliderSpanRef = useRef<(HTMLSpanElement | null)[]>([]);
   const animRef = useRef<gsap.core.Tween | null>(null);
 
   // state for the slider playing progress (to keep track of the whole slider animation)
@@ -29,27 +24,27 @@ const Testimonials = () => {
   // type
   type ProcessType = "slide-end" | "slide-last" | "slide-reset" | "slide-play";
 
-  useEffect(() => {
-    const updatedTestimonials = testimonials.slice(0, -2);
-    setTestimonialsBtns(updatedTestimonials);
-  }, []);
+  //   useEffect(() => {
+  //     const updatedsliders = sliders.slice(0, -2);
+  //     setslidersBtns(updatedsliders);
+  //   }, []);
 
   useGSAP(() => {
     // slider animation to move the slide out of the screen and bring the next slide in
-    gsap.to("#slider", {
+    gsap.to("#slides", {
       transform:
         window.innerWidth < 760
           ? `translateX(${-105 * sliderId}%)` // mobile
           : window.innerWidth < 1200
           ? `translateX(${-102 * sliderId}%)` // tablet
-          : `translateX(${-100 * sliderId}%)`, // laptop
+          : `translateX(${-103 * sliderId}%)`, // laptop
       duration: 2,
       ease: "power2.inOut",
     });
     // slider animation to start the slider animation when it is in the view
-    gsap.to("#slider", {
+    gsap.to("#slides", {
       scrollTrigger: {
-        trigger: "#slider",
+        trigger: "#slides",
         toggleActions: "restart none none none",
       },
       // once the in view restart is complete this function should be called so the carousel and the other
@@ -67,13 +62,12 @@ const Testimonials = () => {
   useEffect(() => {
     let currentProgress: number = 0;
     const startTime = performance.now();
-    const span = testimonialSpanRef.current;
+    const span = sliderSpanRef.current;
 
     if (span[sliderId]) {
       // animation to move the indicator
       animRef.current = gsap.to(span[sliderId], {
         onUpdate: () => {
-          // get the progress of the video
           let progress: number = 0;
 
           if (animRef.current) {
@@ -84,7 +78,7 @@ const Testimonials = () => {
             currentProgress = progress;
 
             // set the width of the progress bar
-            gsap.to(testimonialDivRef.current[sliderId], {
+            gsap.to(sliderDivRef.current[sliderId], {
               width:
                 window.innerWidth < 760
                   ? "10vw" // mobile
@@ -99,17 +93,15 @@ const Testimonials = () => {
             });
           }
         },
-        // when the video is ended, replace the progress bar with the indicator and change the
-        // background color
         onComplete: () => {
           if (isPlaying) {
-            gsap.to(testimonialDivRef.current[sliderId], {
+            gsap.to(sliderDivRef.current[sliderId], {
               width: "12px",
             });
             gsap.to(span[sliderId], {
               backgroundColor: "#0517df",
             });
-            if (sliderId !== 3) {
+            if (sliderId !== 9) {
               handleProcess("slide-end", sliderId);
             } else {
               handleProcess("slide-reset", 0);
@@ -139,7 +131,6 @@ const Testimonials = () => {
     }
   }, [startPlay, sliderId, stopPlay]);
 
-  // for when the play|pause|rest button is clicked, we check the argument and handle the slider animation
   // using the current state of the slider
   const handleProcess = (type: ProcessType, i: number) => {
     switch (type) {
@@ -185,11 +176,11 @@ const Testimonials = () => {
     // If there was a previously active image (not the first click), reset its width and progress
     if (lastIndex !== index) {
       // Reset the width of the previous dot (lastIndex)
-      gsap.to(testimonialDivRef.current[lastIndex], {
+      gsap.to(sliderDivRef.current[lastIndex], {
         width: "12px",
       });
       // Reset the progress bar width of the previous dot (lastIndex)
-      gsap.to(testimonialSpanRef.current[lastIndex], {
+      gsap.to(sliderSpanRef.current[lastIndex], {
         width: "0%", // Reset progress
         backgroundColor: "#e2e8f0", // Reset color
       });
@@ -201,74 +192,49 @@ const Testimonials = () => {
       sliderId: index,
       isPlaying: true,
       stopPlay: false,
-      isLastSlider: index === testimonials.length - 1,
+      isLastSlider: index === slider.length - 1,
       startPlay: true,
     }));
   };
+
   return (
-    <section
-      className="flex flex-col items-center justify-center mb-16 pt-32"
-      id="testimonials"
-    >
-      <h2 className="font-signika text-center text-4xl font-semibold">
-        Testimonials
-      </h2>
-      <ul className="relative flex items-center justify-between gap-4 overflow-x-hidden mt-12 w-full">
-        {testimonials.map((item: testimonialTypes) => (
+    <main className="flex flex-col items-center justify-center -mt-32">
+      <ul className="relative flex items-center justify-between gap-4 overflow-x-hidden mt-12 mx-auto w-full font-signika">
+        {slider.map((slide: string, i: number) => (
           <li
-            id="slider"
-            key={item.id}
-            className="w-[70vw] h-[35vh] p-4 mx-2 shrink-0 rounded-xl overflow-hidden flex flex-col items-center justify-between relative glassmorphism md:w-[70vw] lg:w-[30vw]"
+            id="slides"
+            key={i}
+            className="p-4 w-full text-center mx-auto shrink-0 rounded-xl overflow-hidden flex flex-col items-center justify-between relative"
           >
-            <blockquote className="font-signika text-sm">
-              &quot;{item.testimonial}&quot;
-            </blockquote>
-            <div className="w-full flex items-center justify-between">
-              <span className="font-inter">
-                <h3 className="font-semibold">{item.name}</h3>
-                <p className="text-xs text-black/80">{item.text}</p>
-              </span>
-              <Image
-                src={item.dog}
-                alt={`${item.name}'s dog`}
-                width={50}
-                height={50}
-              />
-            </div>
+            <p className="w-full mx-auto text-lg font-semibold md:w-7/12 lg:w-1/2">
+              {slide}
+            </p>
           </li>
         ))}
-        {/* <span className="hidden absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white via-transparent to-white lg:block"></span> */}
+        <span className="hidden absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white via-transparent to-white lg:block"></span>
       </ul>
-      <div className="relative w-48 flex items-center justify-center rounded-full my-8 mx-auto">
-        {testimonialsBtns.map((_, i) => (
+      <div className="hidden relative w-[300px] items-center justify-center rounded-full mb-8 mx-auto lg:flex">
+        {slider.map((_, i) => (
           <div
             key={i}
             ref={(el: HTMLDivElement | null): void => {
-              testimonialDivRef.current[i] = el;
+              sliderDivRef.current[i] = el;
             }}
             onClick={() => handleDotClick(i)}
-            className="w-3 h-3 relative bg-blue-400 mx-2 rounded-full cursor-pointer lg:w-3 lg:h-3 dot"
+            className="w-3 h-3 relative bg-blue-400 mx-2 rounded-full cursor-pointer"
           >
             <span
               // to keep track of the playing progress
               ref={(el: HTMLSpanElement | null): void => {
-                testimonialSpanRef.current[i] = el;
+                sliderSpanRef.current[i] = el;
               }}
               className="w-full h-full rounded-full absolute"
             />
           </div>
         ))}
       </div>
-      <Link
-        href="/signIn"
-        className="relative inline-block overflow-hidden rounded-xl bg-blue-600 text-white font-roboto px-6 py-2 shadow-lg group"
-      >
-        <div className="absolute top-0 left-[-100%] w-full h-full bg-blue-700 transition-all duration-300 ease-out group-hover:left-0 z-0"></div>
-
-        <span className="relative z-10 font-semibold text-md">Join Now</span>
-      </Link>
-    </section>
+    </main>
   );
 };
 
-export default Testimonials;
+export default HeroSlider;

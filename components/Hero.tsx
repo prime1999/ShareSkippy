@@ -55,7 +55,7 @@ const Hero = () => {
           Connect with Local Dog Lovers.
         </h1>
         <h2
-          className="mb-2 text-3xl font-semibold text-green-600 max-lg:text-center max-lg:mb-8 lg:mb-0"
+          className="mb-2 text-3xl font-semibold text-blue-600 max-lg:text-center max-lg:mb-8 lg:mb-0"
           id="sub-heading"
         >
           Build a Happier Neighborhood Together
@@ -67,10 +67,10 @@ const Hero = () => {
         <div className="w-full flex items-center justify-center lg:block">
           <Link
             href="/signIn"
-            className="relative inline-block overflow-hidden rounded-full bg-orange-400 text-white font-roboto mt-8 px-8 py-4 group"
+            className="relative inline-block overflow-hidden rounded-full bg-blue-500 text-white font-roboto mt-8 px-8 py-4 shadow-lg group"
             id="btn"
           >
-            <div className="absolute top-0 left-[-100%] w-full h-full bg-orange-500 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
+            <div className="absolute top-0 left-[-100%] w-full h-full bg-blue-600 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
 
             <span className="relative z-10 font-semibold text-sm md:text-md">
               Share Your Dog & Borrow a Friend
