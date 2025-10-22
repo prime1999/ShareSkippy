@@ -3,12 +3,15 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
+import HeroSlider from "@/components/HeroSlider";
 import Image from "next/image";
 import woman from "../public/assets/images/woman.png";
+import hero from "../public/assets/images/hero1.jpg";
 import backdrop from "../public/assets/images/blurBackdrop.png";
 import dog1 from "../public/assets/images/dog1.jpg";
 import dog2 from "../public/assets/images/dog2.jpg";
 import dog3 from "../public/assets/images/dog3.jpg";
+import dog4 from "../public/assets/images/test.png";
 
 const Hero = () => {
   useGSAP(() => {
@@ -40,8 +43,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <main className="relative px-4 pt-32 pb-16 flex items-center justify-between gap-4 w-11/12 mx-auto font-signika md:px-16 md:py-32">
-      <div className="w-full lg:w-1/2">
+    <main className="relative pt-20 pb-16 w-full h-[750px] mx-auto font-signika md:w-full">
+      {/* <div className="w-full lg:w-1/2">
         <h6
           className="mt-2 text-blue-800 font-normal text-lg max-lg:text-center max-lg:mt-8 lg:mt-0"
           id="heading"
@@ -127,6 +130,56 @@ const Hero = () => {
               className="rounded-full z-100 w-15 h-15 object-cover"
             />
           </div>
+        </div>
+      </div> */}
+      <div
+        className="relative w-full h-full bg-center bg-cover object-cover"
+        style={{ backgroundImage: `url(${hero.src})` }}
+      >
+        <div
+          className="absolute top-0 left-0 w-full h-full"
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
+        ></div>
+        <div className="flex flex-col items-center justify-center h-full w-full md:w-9/12 lg:w-7/12 mx-auto z-100">
+          <h6
+            className="mt-2 text-white font-normal text-lg max-lg:text-center max-lg:mt-8 lg:mt-0"
+            id="heading"
+          >
+            Where dog lovers connect.
+          </h6>
+          <h1
+            className="mb-2 text-5xl font-semibold text-gray-200 my-2 max-lg:text-center max-lg:mb-4 lg:mb-0"
+            id="main-heading"
+          >
+            Connect with Local Dog Lovers.
+          </h1>
+          <h2
+            className="mb-2 text-3xl font-semibold text-blue-700 max-lg:text-center max-lg:mb-8 lg:mb-0"
+            id="sub-heading"
+          >
+            Build a Happier Neighborhood Together
+          </h2>
+          <p
+            className="text-sm w-11/12 font-roboto text-white text-center max-lg:text-center"
+            id="para"
+          >
+            ShareSkippy connects dog owners with verified dog lovers in your
+            neighborhood for free walks, playdates, and adventures.
+          </p>
+          <div className="w-full flex items-center justify-center">
+            <Link
+              href="/signIn"
+              className="relative inline-block overflow-hidden rounded-full bg-blue-500 text-white font-roboto mt-8 px-8 py-4 shadow-lg group"
+              id="btn"
+            >
+              <div className="absolute top-0 left-[-100%] w-full h-full bg-blue-600 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
+
+              <span className="relative z-10 font-semibold text-sm md:text-md">
+                Share Your Dog & Borrow a Friend
+              </span>
+            </Link>
+          </div>
+          <HeroSlider />
         </div>
       </div>
     </main>

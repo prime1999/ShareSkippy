@@ -211,22 +211,24 @@ const Testimonials = () => {
           <li
             id="slider"
             key={item.id}
-            className="w-[70vw] h-[35vh] p-4 mx-2 shrink-0 rounded-xl overflow-hidden flex flex-col items-center justify-between relative glassmorphism md:w-[70vw] lg:w-[30vw]"
+            className="w-[70vw] h-[28vh] bg-gray-100 mx-2 shrink-0 rounded-xl overflow-hidden md:w-[70vw] lg:w-[30vw]"
           >
-            <blockquote className="font-signika text-sm">
-              &quot;{item.testimonial}&quot;
-            </blockquote>
-            <div className="w-full flex items-center justify-between">
-              <span className="font-inter">
-                <h3 className="font-semibold">{item.name}</h3>
-                <p className="text-xs text-black/80">{item.text}</p>
-              </span>
-              <Image
-                src={item.dog}
-                alt={`${item.name}'s dog`}
-                width={50}
-                height={50}
-              />
+            <div className="w-full h-full p-4 rounded-xl flex flex-col items-center justify-between relative glassmorphism">
+              <blockquote className="font-signika text-sm">
+                &quot;{item.testimonial}&quot;
+              </blockquote>
+              <div className="w-full flex items-center justify-between">
+                <span className="font-inter">
+                  <h3 className="font-semibold">{item.name}</h3>
+                  <p className="text-xs text-black/80">{item.text}</p>
+                </span>
+                <Image
+                  src={item.dog}
+                  alt={`${item.name}'s dog`}
+                  width={50}
+                  height={50}
+                />
+              </div>
             </div>
           </li>
         ))}

@@ -34,9 +34,9 @@ const HeroSlider = () => {
     gsap.to("#slides", {
       transform:
         window.innerWidth < 760
-          ? `translateX(${-104 * sliderId}%)` // mobile
+          ? `translateX(${-102 * sliderId}%)` // mobile
           : window.innerWidth < 1200
-          ? `translateX(${-100 * sliderId}%)` // tablet
+          ? `translateX(${-102 * sliderId}%)` // tablet
           : `translateX(${-101 * sliderId}%)`, // laptop
       duration: 2,
       ease: "power2.inOut",
@@ -198,7 +198,7 @@ const HeroSlider = () => {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center -mt-16 lg:-mt-32">
+    <main className="flex flex-col items-center justify-center -mt-4 lg:-mt-8">
       <ul className="relative flex items-center justify-between gap-4 overflow-x-hidden mt-12 mx-auto w-full font-signika">
         {slider.map((slide: string, i: number) => (
           <li
@@ -206,12 +206,11 @@ const HeroSlider = () => {
             key={i}
             className="p-4 w-full text-center mx-auto shrink-0 rounded-xl overflow-hidden flex flex-col items-center justify-between relative"
           >
-            <p className="w-full mx-auto text-lg font-semibold md:w-7/12 lg:w-1/2">
+            <p className="w-1/4 mx-auto text-sm text-white font-semibold md:w-7/12 md:text-md lg:text-lg lg:w-1/2">
               {slide}
             </p>
           </li>
         ))}
-        <span className="hidden absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white via-transparent to-white lg:block"></span>
       </ul>
       <div className="hidden relative w-[300px] items-center justify-center rounded-full mb-8 mx-auto lg:flex">
         {slider.map((_, i) => (

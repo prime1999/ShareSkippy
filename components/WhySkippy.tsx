@@ -1,11 +1,12 @@
 import Link from "next/link";
 import womanPlayingWithDog from "../public/assets/images/womanPlayingWithDog.jpg";
+import dogRunning from "../public/assets/images/dogRunning.jpg";
 
 const WhySkippy = () => {
   return (
     <section
-      className="relative flex items-center justify-center w-full h-[400px] bg-fixed bg-cover bg-center mx-auto mt-16 py-8 font-signika"
-      style={{ backgroundImage: `url(${womanPlayingWithDog.src})` }}
+      className="relative flex items-center justify-center w-full h-[400px] bg-fixed bg-cover object-contain bg-no-repeat bg-center mx-auto mt-16 py-8 font-signika"
+      style={{ backgroundImage: `url(${dogRunning.src})` }}
       id="whySkippy"
     >
       <div
@@ -27,7 +28,7 @@ const WhySkippy = () => {
         </p>
         <Link
           href="/signIn"
-          className="relative inline-block overflow-hidden rounded-full bg-blue-500 text-white font-roboto mt-2 px-8 py-4 shadow-lg group md:mt-4 lg:mt-8"
+          className="relative inline-block overflow-hidden rounded-full bg-blue-500 text-white font-roboto mt-4 px-8 py-4 shadow-lg group lg:mt-8"
         >
           <div className="absolute top-0 left-[-100%] w-full h-full bg-blue-600 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
 

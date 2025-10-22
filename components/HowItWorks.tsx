@@ -96,7 +96,6 @@ const HowItWorks = () => {
         <Link
           href="/signIn"
           className="relative inline-block overflow-hidden rounded-full bg-blue-500 text-white font-roboto mt-8 px-8 py-4 shadow-lg group"
-          revert-update
         >
           <div className="absolute top-0 left-[-100%] w-full h-full bg-blue-600 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
 
