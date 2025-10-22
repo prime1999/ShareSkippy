@@ -154,7 +154,7 @@ const Hero = () => {
             Connect with Local Dog Lovers.
           </h1>
           <h2
-            className="mb-2 text-3xl font-semibold text-blue-700 max-lg:text-center max-lg:mb-8 lg:mb-0"
+            className="mb-2 text-3xl font-semibold text-blue-300 max-lg:text-center max-lg:mb-8 lg:mb-0"
             id="sub-heading"
           >
             Build a Happier Neighborhood Together

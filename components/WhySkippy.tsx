@@ -5,7 +5,7 @@ import dogRunning from "../public/assets/images/dogRunning.jpg";
 const WhySkippy = () => {
   return (
     <section
-      className="relative flex items-center justify-center w-full h-[400px] bg-fixed bg-cover object-contain bg-no-repeat bg-center mx-auto mt-16 py-8 font-signika"
+      className="relative flex items-center justify-center w-full h-[400px] bg-cover object-cover bg-center mx-auto mt-16 py-8 font-signika md:bg-fixed"
       style={{ backgroundImage: `url(${dogRunning.src})` }}
       id="whySkippy"
     >
