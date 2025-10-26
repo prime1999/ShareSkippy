@@ -34,7 +34,7 @@ const HeroSlider = () => {
     gsap.to("#slides", {
       transform:
         window.innerWidth < 760
-          ? `translateX(${-102 * sliderId}%)` // mobile
+          ? `translateX(${-104 * sliderId}%)` // mobile
           : window.innerWidth < 1200
           ? `translateX(${-102 * sliderId}%)` // tablet
           : `translateX(${-101 * sliderId}%)`, // laptop
@@ -198,7 +198,7 @@ const HeroSlider = () => {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center -mt-4 lg:-mt-8">
+    <main className="flex flex-col items-center justify-center -mt-16 lg:-mt-32">
       <ul className="relative flex items-center justify-between gap-4 overflow-x-hidden mt-12 mx-auto w-full font-signika">
         {slider.map((slide: string, i: number) => (
           <li
@@ -206,7 +206,7 @@ const HeroSlider = () => {
             key={i}
             className="p-4 w-full text-center mx-auto shrink-0 rounded-xl overflow-hidden flex flex-col items-center justify-between relative"
           >
-            <p className="w-1/4 mx-auto text-sm text-white font-semibold md:w-7/12 md:text-md lg:text-lg lg:w-1/2">
+            <p className="w-10/12 mx-auto text-sm font-semibold md:w-7/12 md:text-md lg:text-lg lg:w-1/2">
               {slide}
             </p>
           </li>

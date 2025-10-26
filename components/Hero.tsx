@@ -7,6 +7,8 @@ import HeroSlider from "@/components/HeroSlider";
 import Image from "next/image";
 import woman from "../public/assets/images/woman.png";
 import hero from "../public/assets/images/hero1.jpg";
+import grass from "../public/assets/images/grass.png";
+import ladyWithDog from "../public/assets/images/ladyWithDog.png";
 import backdrop from "../public/assets/images/blurBackdrop.png";
 import dog1 from "../public/assets/images/dog1.jpg";
 import dog2 from "../public/assets/images/dog2.jpg";
@@ -43,10 +45,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <main className="relative pt-20 pb-16 w-full h-[750px] mx-auto font-signika md:w-full">
-      {/* <div className="w-full lg:w-1/2">
+    <main className="relative flex items-center pt-32 pb-16 w-11/12 h-[750px] mx-auto font-signika md:w-10/12">
+      <div className="w-full lg:w-1/2">
         <h6
-          className="mt-2 text-blue-800 font-normal text-lg max-lg:text-center max-lg:mt-8 lg:mt-0"
+          className="text-blue-800 font-normal text-lg max-lg:text-center lg:mt-0"
           id="heading"
         >
           Where dog lovers connect.
@@ -94,14 +96,25 @@ const Hero = () => {
               style={{ borderRadius: "100%" }}
             />
           </div>
-          <div className="absolute -top-20">
-            <Image
-              src={woman}
-              alt="woman hugging a dog"
+          <div className="absolute top-80 left-10">
+            <div className="absolute -top-50 -left-40 w-170">
+              {" "}
+              <Image
+                src={ladyWithDog}
+                alt="woman hugging a dog"
+                width={1000}
+                height={1000}
+                className="full object-cover"
+              />
+              <div className="absolute left-0 w-full h-50 bottom-0 inset-x-0 bg-gradient-to-t from-white via-white/94 to-transparent"></div>
+            </div>
+            {/* <Image
+              src={grass}
+              alt="grass"
               width={500}
               height={500}
               className=""
-            />
+            /> */}
           </div>
           <div className="absolute bottom-20 right-20 border-4 border-white rounded-full shadow-lg">
             <Image
@@ -131,8 +144,8 @@ const Hero = () => {
             />
           </div>
         </div>
-      </div> */}
-      <div
+      </div>
+      {/* <div
         className="relative w-full h-full bg-center bg-cover object-cover"
         style={{ backgroundImage: `url(${hero.src})` }}
       >
@@ -181,7 +194,7 @@ const Hero = () => {
           </div>
           <HeroSlider />
         </div>
-      </div>
+      </div> */}
     </main>
   );
 };
