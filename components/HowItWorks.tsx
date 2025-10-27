@@ -48,7 +48,7 @@ const HowItWorks = () => {
           Get Started in <br />3 Easy Steps
         </h3>
       </div>
-      <div className="w-11/12mx-auto mt-12 mb-8 flex gap-4 items-center justify-center">
+      <div className="w-11/12 mx-auto mt-12 mb-8 flex gap-4 items-center justify-center">
         <div className="hidden w-1/2 items-center justify-center md:flex">
           <Image src={dog4} alt="dog" width={250} height={250} />
         </div>

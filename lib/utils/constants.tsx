@@ -114,3 +114,21 @@ export const slider = [
   "Some owners can't give their dogs enough walks — maybe they're elderly, disabled, or working 80-hour tech weeks. Meanwhile, plenty of dog lovers are dying to hike, run, or cuddle. We make the match.",
   "When dogs get more love, humans get more joy. It's science. (Okay, maybe not peer-reviewed, but just look at their faces.)",
 ];
+
+export const whySkippy = [
+  {
+    id: 1,
+    title: "For Dog Lovers",
+    para: "Companionship & adventures, no ownership required",
+  },
+  {
+    id: 2,
+    title: "For Dog Owners",
+    para: "Free help keeping pups happy & active",
+  },
+  {
+    id: 3,
+    title: "For Communities",
+    para: "Stronger neighborhood bonds through shared love for dogs",
+  },
+];

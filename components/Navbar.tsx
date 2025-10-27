@@ -6,7 +6,7 @@ import MobileDrawer from "./MobileDrawer";
 
 const Navbar = () => {
   return (
-    <nav className="fixed z-100 w-full">
+    <nav className="fixed z-500 w-full">
       <div className="w-full glassmorphism">
         <div className="w-11/12 flex items-center justify-between mx-auto p-4 lg:w-9/12">
           <Logo />

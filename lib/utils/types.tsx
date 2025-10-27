@@ -15,3 +15,9 @@ export interface testimonialTypes {
   testimonial: string;
   dog: StaticImageData;
 }
+
+export interface whySkippyTypes {
+  id: number;
+  title: string;
+  para: string;
+}

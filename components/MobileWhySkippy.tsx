@@ -1,13 +1,14 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { slider } from "@/lib/utils/constants";
+import { whySkippy } from "@/lib/utils/constants";
+import { whySkippyTypes } from "@/lib/utils/types";
 
-const HeroSlider = () => {
-  const sliderDivRef = useRef<(HTMLDivElement | null)[]>([]);
-  const sliderSpanRef = useRef<(HTMLSpanElement | null)[]>([]);
+const MobileWhySkippy = () => {
+  const whySkippyDivRef = useRef<(HTMLDivElement | null)[]>([]);
+  const whySkippySpanRef = useRef<(HTMLSpanElement | null)[]>([]);
   const animRef = useRef<gsap.core.Tween | null>(null);
 
   // state for the slider playing progress (to keep track of the whole slider animation)
@@ -24,27 +25,22 @@ const HeroSlider = () => {
   // type
   type ProcessType = "slide-end" | "slide-last" | "slide-reset" | "slide-play";
 
-  //   useEffect(() => {
-  //     const updatedsliders = sliders.slice(0, -2);
-  //     setslidersBtns(updatedsliders);
-  //   }, []);
-
   useGSAP(() => {
     // slider animation to move the slide out of the screen and bring the next slide in
-    gsap.to("#slides", {
+    gsap.to("#whySlider", {
       transform:
         window.innerWidth < 760
-          ? `translateX(${-104 * sliderId}%)` // mobile
+          ? `translateX(${-105 * sliderId}%)` // mobile
           : window.innerWidth < 1200
           ? `translateX(${-102 * sliderId}%)` // tablet
-          : `translateX(${-101 * sliderId}%)`, // laptop
+          : `translateX(${-100 * sliderId}%)`, // laptop
       duration: 2,
       ease: "power2.inOut",
     });
     // slider animation to start the slider animation when it is in the view
-    gsap.to("#slides", {
+    gsap.to("#whySlider", {
       scrollTrigger: {
-        trigger: "#slides",
+        trigger: "#whySlider",
         toggleActions: "restart none none none",
       },
       // once the in view restart is complete this function should be called so the carousel and the other
@@ -62,12 +58,13 @@ const HeroSlider = () => {
   useEffect(() => {
     let currentProgress: number = 0;
     const startTime = performance.now();
-    const span = sliderSpanRef.current;
+    const span = whySkippySpanRef.current;
 
     if (span[sliderId]) {
       // animation to move the indicator
       animRef.current = gsap.to(span[sliderId], {
         onUpdate: () => {
+          // get the progress of the video
           let progress: number = 0;
 
           if (animRef.current) {
@@ -78,7 +75,7 @@ const HeroSlider = () => {
             currentProgress = progress;
 
             // set the width of the progress bar
-            gsap.to(sliderDivRef.current[sliderId], {
+            gsap.to(whySkippyDivRef.current[sliderId], {
               width:
                 window.innerWidth < 760
                   ? "10vw" // mobile
@@ -93,15 +90,17 @@ const HeroSlider = () => {
             });
           }
         },
+        // when the video is ended, replace the progress bar with the indicator and change the
+        // background color
         onComplete: () => {
           if (isPlaying) {
-            gsap.to(sliderDivRef.current[sliderId], {
+            gsap.to(whySkippyDivRef.current[sliderId], {
               width: "12px",
             });
             gsap.to(span[sliderId], {
               backgroundColor: "#0517df",
             });
-            if (sliderId !== 9) {
+            if (sliderId !== 2) {
               handleProcess("slide-end", sliderId);
             } else {
               handleProcess("slide-reset", 0);
@@ -131,6 +130,7 @@ const HeroSlider = () => {
     }
   }, [startPlay, sliderId, stopPlay]);
 
+  // for when the play|pause|rest button is clicked, we check the argument and handle the slider animation
   // using the current state of the slider
   const handleProcess = (type: ProcessType, i: number) => {
     switch (type) {
@@ -176,11 +176,11 @@ const HeroSlider = () => {
     // If there was a previously active image (not the first click), reset its width and progress
     if (lastIndex !== index) {
       // Reset the width of the previous dot (lastIndex)
-      gsap.to(sliderDivRef.current[lastIndex], {
+      gsap.to(whySkippyDivRef.current[lastIndex], {
         width: "12px",
       });
       // Reset the progress bar width of the previous dot (lastIndex)
-      gsap.to(sliderSpanRef.current[lastIndex], {
+      gsap.to(whySkippySpanRef.current[lastIndex], {
         width: "0%", // Reset progress
         backgroundColor: "#e2e8f0", // Reset color
       });
@@ -192,48 +192,49 @@ const HeroSlider = () => {
       sliderId: index,
       isPlaying: true,
       stopPlay: false,
-      isLastSlider: index === slider.length - 1,
+      isLastSlider: index === whySkippy.length - 1,
       startPlay: true,
     }));
   };
-
   return (
-    <main className="flex flex-col items-center justify-center -mt-40 lg:-mt-24">
-      <ul className="relative flex items-center justify-between gap-4 overflow-x-hidden mt-12 mx-auto w-full font-signika">
-        {slider.map((slide: string, i: number) => (
+    <section
+      className="w-full flex flex-col items-center justify-center -mt-2 lg:hidden"
+      id="whySkippy"
+    >
+      <ul className="relative flex items-center justify-between gap-4 overflow-x-hidden mt-12 w-full text-black">
+        {whySkippy.map((item: whySkippyTypes) => (
           <li
-            id="slides"
-            key={i}
-            className="p-4 w-full text-center mx-auto shrink-0 rounded-xl overflow-hidden flex flex-col items-center justify-between relative"
+            id="whySlider"
+            key={item.id}
+            className="w-[70vw] h-[15vh] flex flex-col items-center justify-center glassmorphism mx-2 shrink-0 font-roboto rounded-xl p-2 text-center overflow-hidden"
           >
-            <p className="w-11/12 mx-auto font-semibold md:w-7/12 md:text-md lg:text-lg lg:w-9/12">
-              {slide}
-            </p>
+            <h6 className="text-center text-lg font-semibold">{item.title}</h6>
+            <p className="text-sm">{item.para}</p>
           </li>
         ))}
       </ul>
-      <div className="hidden relative w-[300px] items-center justify-center rounded-full mb-8 mx-auto lg:flex">
-        {slider.map((_, i) => (
+      <div className="relative w-48 flex items-center justify-center rounded-full my-8 mx-auto">
+        {whySkippy.map((_, i) => (
           <div
             key={i}
             ref={(el: HTMLDivElement | null): void => {
-              sliderDivRef.current[i] = el;
+              whySkippyDivRef.current[i] = el;
             }}
             onClick={() => handleDotClick(i)}
-            className="w-3 h-3 relative bg-blue-400 mx-2 rounded-full cursor-pointer"
+            className="w-3 h-3 relative bg-blue-400 mx-2 rounded-full cursor-pointer lg:w-3 lg:h-3 dot"
           >
             <span
               // to keep track of the playing progress
               ref={(el: HTMLSpanElement | null): void => {
-                sliderSpanRef.current[i] = el;
+                whySkippySpanRef.current[i] = el;
               }}
               className="w-full h-full rounded-full absolute"
             />
           </div>
         ))}
       </div>
-    </main>
+    </section>
   );
 };
 
-export default HeroSlider;
+export default MobileWhySkippy;
