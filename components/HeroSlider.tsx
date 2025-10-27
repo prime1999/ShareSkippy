@@ -89,7 +89,7 @@ const HeroSlider = () => {
             // set the background color of the progress bar
             gsap.to(span[sliderId], {
               width: `${currentProgress}%`,
-              backgroundColor: "blue",
+              backgroundColor: "purple",
             });
           }
         },
@@ -220,7 +220,7 @@ const HeroSlider = () => {
               sliderDivRef.current[i] = el;
             }}
             onClick={() => handleDotClick(i)}
-            className="w-3 h-3 relative bg-blue-400 mx-2 rounded-full cursor-pointer"
+            className="w-3 h-3 relative bg-purple-400 mx-2 rounded-full cursor-pointer"
           >
             <span
               // to keep track of the playing progress

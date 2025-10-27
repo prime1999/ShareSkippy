@@ -86,7 +86,7 @@ const MobileWhySkippy = () => {
             // set the background color of the progress bar
             gsap.to(span[sliderId], {
               width: `${currentProgress}%`,
-              backgroundColor: "blue",
+              backgroundColor: "purple",
             });
           }
         },
@@ -221,7 +221,7 @@ const MobileWhySkippy = () => {
               whySkippyDivRef.current[i] = el;
             }}
             onClick={() => handleDotClick(i)}
-            className="w-3 h-3 relative bg-blue-400 mx-2 rounded-full cursor-pointer lg:w-3 lg:h-3 dot"
+            className="w-3 h-3 relative bg-purple-400 mx-2 rounded-full cursor-pointer lg:w-3 lg:h-3 dot"
           >
             <span
               // to keep track of the playing progress

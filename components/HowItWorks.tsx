@@ -61,7 +61,7 @@ const HowItWorks = () => {
             <p className="font-normal text-xs">
               Are you a dog owner or dog lover?
             </p>
-            <h4 className="absolute -top-5 -left-3 rounded-full p-4 text-center flex items-center justify-center border-4 border-blue-300 shadow-md font-signika bg-blue-500 w-10 h-10">
+            <h4 className="absolute -top-5 -left-3 rounded-full p-4 text-center flex items-center justify-center border-4 border-purple-300 shadow-md font-signika bg-purple-500 w-10 h-10">
               1
             </h4>
           </div>
@@ -73,7 +73,7 @@ const HowItWorks = () => {
             <p className="font-normal text-xs">
               Browse verified dog lovers in your area.
             </p>
-            <h4 className="absolute -top-5 -left-3 rounded-full p-4 text-center flex items-center justify-center border-4 border-blue-300 shadow-md font-signika bg-blue-500 w-10 h-10">
+            <h4 className="absolute -top-5 -left-3 rounded-full p-4 text-center flex items-center justify-center border-4 border-purple-300 shadow-md font-signika bg-purple-500 w-10 h-10">
               2
             </h4>
           </div>
@@ -85,7 +85,7 @@ const HowItWorks = () => {
             <p className="font-normal text-xs">
               Message, meet up, and watch tails wag!
             </p>
-            <h4 className="absolute -top-5 -left-3 rounded-full p-4 text-center flex items-center justify-center border-4 border-blue-300 shadow-md font-signika bg-blue-500 w-10 h-10">
+            <h4 className="absolute -top-5 -left-3 rounded-full p-4 text-center flex items-center justify-center border-4 border-purple-300 shadow-md font-signika bg-purple-500 w-10 h-10">
               3
             </h4>
           </div>
@@ -95,9 +95,9 @@ const HowItWorks = () => {
         {" "}
         <Link
           href="/signIn"
-          className="relative inline-block overflow-hidden rounded-full bg-blue-500 text-white font-roboto mt-8 px-8 py-4 shadow-lg group"
+          className="relative inline-block overflow-hidden rounded-full bg-purple-500 text-white font-roboto mt-8 px-8 py-4 shadow-lg group"
         >
-          <div className="absolute top-0 left-[-100%] w-full h-full bg-blue-600 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
+          <div className="absolute top-0 left-[-100%] w-full h-full bg-purple-600 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
 
           <span className="relative z-10 font-semibold text-md">
             Find your pack

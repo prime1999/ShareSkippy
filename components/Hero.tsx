@@ -48,19 +48,19 @@ const Hero = () => {
     <main className="relative flex items-center pt-32 pb-16 w-11/12 h-[750px] mx-auto font-signika md:w-10/12">
       <div className="w-full lg:w-1/2">
         <h6
-          className="text-blue-800 font-normal text-lg max-lg:text-center lg:mt-0"
+          className="text-purple-800 font-normal text-lg max-lg:text-center lg:mt-0"
           id="heading"
         >
           Where dog lovers connect.
         </h6>
         <h1
-          className="mb-2 text-5xl font-semibold text-blue-900 my-2 max-lg:text-center max-lg:mb-4 lg:mb-0"
+          className="mb-2 text-5xl font-semibold text-purple-900 my-2 max-lg:text-center max-lg:mb-4 lg:mb-0"
           id="main-heading"
         >
           Connect with Local Dog Lovers.
         </h1>
         <h2
-          className="mb-2 text-3xl font-semibold text-blue-600 max-lg:text-center max-lg:mb-8 lg:mb-0"
+          className="mb-2 text-3xl font-semibold text-purple-600 max-lg:text-center max-lg:mb-8 lg:mb-0"
           id="sub-heading"
         >
           Build a Happier Neighborhood Together
@@ -72,10 +72,10 @@ const Hero = () => {
         <div className="w-full flex items-center justify-center lg:block">
           <Link
             href="/signIn"
-            className="relative inline-block overflow-hidden rounded-full bg-blue-500 text-white font-roboto mt-8 px-8 py-4 shadow-lg group"
+            className="relative inline-block overflow-hidden rounded-full bg-purple-500 text-white font-roboto mt-8 px-8 py-4 shadow-lg group"
             id="btn"
           >
-            <div className="absolute top-0 left-[-100%] w-full h-full bg-blue-600 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
+            <div className="absolute top-0 left-[-100%] w-full h-full bg-purple-600 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
 
             <span className="relative z-10 font-semibold text-sm md:text-md">
               Share Your Dog & Borrow a Friend
@@ -85,7 +85,7 @@ const Hero = () => {
       </div>
       <div className="hidden lg:block lg:w-1/2">
         <div className="relative">
-          <div className="w-130 h-130 rounded-full border-2 border-dashed border-blue-200 flex items-center justify-center p-4">
+          <div className="w-130 h-130 rounded-full border-2 border-dashed border-purple-200 flex items-center justify-center p-4">
             <Image
               src={backdrop}
               alt="A blurred backdrop"
@@ -167,7 +167,7 @@ const Hero = () => {
             Connect with Local Dog Lovers.
           </h1>
           <h2
-            className="mb-2 text-3xl font-semibold text-blue-300 max-lg:text-center max-lg:mb-8 lg:mb-0"
+            className="mb-2 text-3xl font-semibold text-purple-300 max-lg:text-center max-lg:mb-8 lg:mb-0"
             id="sub-heading"
           >
             Build a Happier Neighborhood Together
@@ -182,10 +182,10 @@ const Hero = () => {
           <div className="w-full flex items-center justify-center">
             <Link
               href="/signIn"
-              className="relative inline-block overflow-hidden rounded-full bg-blue-500 text-white font-roboto mt-8 px-8 py-4 shadow-lg group"
+              className="relative inline-block overflow-hidden rounded-full bg-purple-500 text-white font-roboto mt-8 px-8 py-4 shadow-lg group"
               id="btn"
             >
-              <div className="absolute top-0 left-[-100%] w-full h-full bg-blue-600 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
+              <div className="absolute top-0 left-[-100%] w-full h-full bg-purple-600 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
 
               <span className="relative z-10 font-semibold text-sm md:text-md">
                 Share Your Dog & Borrow a Friend

@@ -88,7 +88,7 @@ const Testimonials = () => {
             // set the background color of the progress bar
             gsap.to(span[sliderId], {
               width: `${currentProgress}%`,
-              backgroundColor: "blue",
+              backgroundColor: "purple",
             });
           }
         },
@@ -241,7 +241,7 @@ const Testimonials = () => {
               testimonialDivRef.current[i] = el;
             }}
             onClick={() => handleDotClick(i)}
-            className="w-3 h-3 relative bg-blue-400 mx-2 rounded-full cursor-pointer lg:w-3 lg:h-3 dot"
+            className="w-3 h-3 relative bg-purple-400 mx-2 rounded-full cursor-pointer lg:w-3 lg:h-3 dot"
           >
             <span
               // to keep track of the playing progress
@@ -255,9 +255,9 @@ const Testimonials = () => {
       </div>
       <Link
         href="/signIn"
-        className="relative inline-block overflow-hidden rounded-xl bg-blue-600 text-white font-roboto px-6 py-2 shadow-lg group"
+        className="relative inline-block overflow-hidden rounded-xl bg-purple-600 text-white font-roboto px-6 py-2 shadow-lg group"
       >
-        <div className="absolute top-0 left-[-100%] w-full h-full bg-blue-700 transition-all duration-300 ease-out group-hover:left-0 z-0"></div>
+        <div className="absolute top-0 left-[-100%] w-full h-full bg-purple-700 transition-all duration-300 ease-out group-hover:left-0 z-0"></div>
 
         <span className="relative z-10 font-semibold text-md">Join Now</span>
       </Link>

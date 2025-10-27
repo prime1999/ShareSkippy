@@ -28,7 +28,7 @@ const WhySkippy = () => {
   }, []);
   return (
     <section
-      className="relative w-full h-[550px] bg-cover object-cover bg-center mx-auto mt-16 py-8 font-signika md:bg-fixed"
+      className="relative w-full h-[600px] bg-cover object-cover bg-center mx-auto mt-16 py-8 font-signika md:bg-fixed md:h-[550px]"
       style={{ backgroundImage: `url(${dogRunning.src})` }}
     >
       <div
@@ -80,9 +80,9 @@ const WhySkippy = () => {
           </p>
           <Link
             href="/signIn"
-            className="relative inline-block overflow-hidden rounded-full bg-blue-500 text-white font-roboto mt-8 px-8 py-4 shadow-lg group lg:mt-8"
+            className="relative inline-block overflow-hidden rounded-full bg-purple-500 text-white font-roboto mt-8 px-8 py-4 shadow-lg group lg:mt-8"
           >
-            <div className="absolute top-0 left-[-100%] w-full h-full bg-blue-600 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
+            <div className="absolute top-0 left-[-100%] w-full h-full bg-purple-600 transition-all duration-500 ease-out group-hover:left-0 z-0"></div>
 
             <span className="relative z-10 font-semibold text-md">
               Become a Pet Pal
